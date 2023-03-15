@@ -1,0 +1,77 @@
+{% if section.settings.enable_custom-font %}
+
+<style>
+
+    @font-face {
+
+  font-family: '{{section.settings.name-font}}';
+
+  src: url({{ section.settings.custom-font }}) format('woff2');
+
+ 
+
+}
+
+ 
+
+h1, h2, h3, h4, h5, h6{
+
+font-family: '{{section.settings.name-font}}' !important;
+
+ 
+
+}
+
+  
+
+</style>
+
+      {% endif %}
+
+{% schema %}
+
+  {
+
+    "name": "Custom Primary Font",
+
+    "settings": [
+
+      {
+
+        "type":"checkbox",
+
+        "id":"enable_custom-font",
+
+        "label":"Enable Custom Primary Font Link",
+
+        "default":false
+
+      },
+
+      {
+
+        "type":"text",
+
+        "id":"custom-font",
+
+        "label":"Add Custom Primary Font Link",
+
+        "info":"Upload font file in woff2 format in shopify files"
+
+      },
+
+      {
+
+        "type":"text",
+
+        "id":"name-font",
+
+        "label":"Custom Primary Font Name"
+
+      }
+
+    ]
+
+  }
+
+{% endschema %}
