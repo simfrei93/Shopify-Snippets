@@ -1,0 +1,21 @@
+#### Add following Script on End of the Announcement-bar.liquid of Shopify's Dawn Theme ####
+
+<script>
+let announcementIndex = 0;
+showAnnouncements();
+
+function showAnnouncements() {
+  let i;
+  let announcements = document.getElementsByClassName("announcement-bar");
+  console.log(announcements);
+  for (i = 0; i < announcements.length; i++) {
+    announcements[i].style.display = "none";
+  }
+  announcementIndex++;
+  if (announcementIndex > announcements.length) {
+    announcementIndex = 1;
+  }
+  announcements[announcementIndex - 1].style.display = "block";
+  setTimeout(showAnnouncements, 4000); // Change announcement every 4 seconds
+}
+</script>
